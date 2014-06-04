@@ -1,0 +1,233 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strike, strong, sub, sup, tt, var,
+center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+.ui-tooltip {
+	padding: 8px;
+	position: absolute;
+	z-index: 9999;
+	max-width: 300px;
+	background: #fff;
+	color: #000;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body, textarea, select, input {
+	font: 9pt verdana,arial,helvetica,sans-serif !important;
+}
+a, a:visited, a:active, a:hover {
+	color: none !important;
+	text-decoration: none !important;
+}
+textarea, select, input {
+	padding: 2px;
+}
+input[type="text"], input[type="password"] {
+	height: 12px !important;
+	margin-bottom: 0px;
+	background: none;
+	border: none;
+	padding: 2px;
+	padding-bottom: 3px;
+	font-size: 8pt;
+}
+input[type=file] {
+	height: 24px;
+	padding-bottom: 0px;
+}
+input[disabled], textarea[disabled] {
+	background: #AAA !important;
+	color: #444 !important;
+	cursor: auto;
+}
+.reply {
+	margin-left:auto;
+	margin-right:auto;
+	min-width: 100px;
+	max-width:500px;
+	width: auto;
+	margin-bottom: 8px;
+}
+.hidden {
+	display: none;
+}
+.quote {
+	color: green;
+}
+.header {
+	margin-bottom: 32px;
+}
+.footer {
+	margin-bottom: -16px;
+}
+.title {
+	margin-top: 32px;
+	padding-left: 16px;
+	margin-left:auto;
+	margin-right:auto;
+	width:auto;
+	text-align: center;
+	margin-bottom: -20px;
+}
+.title h1 {
+	font-size: 24pt;
+}
+.title img {
+	border-radius: 4px;
+}
+.polls  {
+	padding: 4px;
+	padding-left: 8px;
+	margin: 4px;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+.nav {
+	margin-bottom: 12px;
+	padding: 5px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 6px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: calc(100% - 24px);
+	z-index: 9001;
+	opacity:0.9;
+}
+.wrapper {
+	padding: 8px;
+}
+
+.threadcontainer {
+	padding: 8px;
+	padding-top: 16px;
+	margin-top: 3px;
+}
+.postcontainer {
+	display: inline-block;
+	margin-bottom: 16px;
+	vertical-align: top;
+	max-width: calc(100% - 32px);
+	word-wrap: break-word;
+}
+.posttitle {
+	font-weight: bold;
+	color: rgb(204, 17, 5);
+	font-size: 9pt;
+}
+.postinfol {
+    padding: 5px;
+	padding-left: 0px;
+	max-width: 80%;
+	width: auto;
+	white-space:nowrap;
+	margin-right: 140px;
+	min-width: 100px;
+}
+.postinfor {
+	float: right;
+	width: 100px;
+	margin-top: -24px;
+    padding: 5px;
+	margin-right: -10px;
+	opacity:0.8;
+	text-align: right;
+}
+.postbody {
+    padding-left: 16px;
+	padding-top: 4px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	margin-right: 2px;
+	margin-bottom: -8px;
+	overflow: auto;
+	min-width: 300px;
+	width: auto;
+}
+.postimage {
+	float: left;
+	width: auto;
+	height: auto;
+	margin-right: 16px;
+	margin-bottom: 8px;
+	padding-bottom: 3px;
+	z-index: 9001;
+	overflow: hidden;
+}
+.postimage img {
+	max-width: 250px;
+	max-height: 250px;
+	width: auto;
+	height: auto;
+	image-rendering: auto;
+	margin-bottom: -5px;
+}
+.postoptions {
+	float: right;
+	position: relative;
+	top: 4px;
+	right: 24px;
+	margin-right: -40px;
+	margin-bottom: -8px;
+	display: inline-block;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: center;
+}
+.pagination {
+	padding: 12px;
+	position: relative;
+	top: -2px;
+}
+.frontpage {
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top: 4px;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-bottom: 8px;
+	border-radius: 4px; 
+}

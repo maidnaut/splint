@@ -1,0 +1,55 @@
+body {
+	background: #EEF8FE;
+	color: #000;
+}
+a, a:hover, a:active {
+	color: #065F07;
+}
+input[type="text"], input[type="password"], textarea {
+	background: #fff;
+	border: 1px solid #999;
+	color: #000;
+}
+/* input glow */
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	outline: none;
+	background: #fff;
+	border: 1px solid #999;
+	box-shadow:none !important;
+}
+.title {
+	color: #BF696A;
+}
+.title img {
+	border: 1px solid #CFB9BA; 
+}
+.polls  {
+	background: #92BE9E;
+}
+.nav {
+	background: #92BE9E;
+}
+.threadcontainer {
+	border-top: 1px solid #CFB9BA;
+}
+.postinfol a, .postinfor a {
+	color: #000;
+}
+.postinfol a:hover, .postinfor a:hover {
+	color: #065F07;
+}
+.postbody {
+	background: #F5FCE4;
+	box-shadow: 0px 0px 2px #CFB9BA;
+}
+.postimage {
+	overflow: visible;
+}
+.postimage img {
+	box-shadow: 1px 1px 2px #AAA;
+}
+.frontpage {
+	background: #F5FCE4;
+	border: 1px solid #CFB9BA;
+	box-shadow: 1px 1px 2px #AAA;
+}

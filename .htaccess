@@ -1,0 +1,3 @@
+Options +Includes
+Options -Indexes
+ErrorDocument 404 /404.php

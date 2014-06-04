@@ -1,0 +1,56 @@
+body {
+	background: url(img/mio_fade.png) top center repeat-x #EEF2FF;
+	color: #000;
+}
+a, a:hover, a:active {
+	color: #30307b;
+}
+input[type="text"], input[type="password"], textarea {
+	background: #fff;
+	border: 1px solid #999;
+	color: #000;
+}
+/* input glow */
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	outline: none;
+	background: #fff;
+	border: 1px solid #999;
+	box-shadow:none !important;
+}
+.title {
+	color: #656570;
+}
+.title img {
+	border: 1px solid #C5C5D0; 
+	box-shadow: 1px 1px 2px #C5C5D0;
+}
+.polls  {
+	background: #C5C5D0;
+}
+.nav {
+	background: #C5C5D0;
+}
+.threadcontainer {
+	border-top: 1px solid #C5C5D0;
+}
+.postinfol a, .postinfor a {
+	color: #000;
+}
+.postinfol a:hover, .postinfor a:hover {
+	color: #30307b;
+}
+.postbody {
+	background: #FFF;
+	box-shadow: 0px 0px 2px #AAA;
+}
+.postimage {
+	overflow: visible;
+}
+.postimage img {
+	box-shadow: 1px 1px 2px #AAA;
+}
+.frontpage {
+	background: #fff;
+	border: 1px solid #C5C5D0;
+	box-shadow: 1px 1px 2px #AAA;
+}

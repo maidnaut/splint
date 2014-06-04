@@ -1,0 +1,65 @@
+body {
+	background: #111;
+	color: #777;
+}
+a, a:active {
+	color: #656590;
+}
+a:hover {
+	color: #f33;
+}
+input[type="text"], input[type="password"], textarea {
+	color: #C0D0E0;
+	background: #402020;
+	border: 1px solid #000;
+}
+/* input glow */
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	outline: none;
+	background: #402020;
+	border: 1px solid #000;
+	box-shadow:none !important;
+}
+.btn, .btn:hover {
+	color: #C0D0E0;
+	background: #402020;
+	border: none; 
+	box-shadow: 1px 1px 2px #000;
+	text-shadow: none;
+}
+.title {
+	color: #ccc;
+}
+.title img {
+	border: 1px solid #000;
+	box-shadow: 1px 1px 2px #000;
+}
+.polls  {
+	background: rgba(10,10,10,0.7);
+}
+.nav {
+	background: rgba(10,10,10,0.7);
+}
+.threadcontainer {
+	border-top: 1px solid #000;
+}
+.postinfol a, .postinfor a {
+	color: #777;
+}
+.postinfol a:hover, .postinfor a:hover {
+	color: #f33;
+}
+.postbody {
+	background: #1D1D1D;
+	box-shadow: 0px 0px 2px #000;
+}
+.postimage {
+	overflow: visible;
+}
+.postimage img {
+	box-shadow: 1px 1px 2px #222;
+}
+.frontpage {
+	background: #1D1D1D;
+	box-shadow: 1px 1px 2px #000;
+}
