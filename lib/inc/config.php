@@ -31,16 +31,13 @@
 	$cfg['offline']			= 		$row['conf_offline'];
 	$cfg['faq'] 			= 		$row['conf_faq'];
 	$cfg['alert'] 			= 		$row['conf_alert'];
-	$cfg['version'] 		= 		"Splint v0.2a";
+	$cfg['version'] 		= 		"Splint v0.3a";
 	$cfg['support'] 		= 		"support@ka-ch.org";
 	$cfg['staff'] 			= 		$row['conf_staffcolor'];
 	$cfg['anon'] 			=	 	$row['conf_anoncolor'];
 	$cfg['rcap'] 			=	 	$row['conf_reportcap'];
 	$cfg['threadlimit'] 	=	 	$row['conf_threadlimit'];
 	$cfg['user_ip']			=		$_SERVER['REMOTE_ADDR'];
-	
-	$cfg['img_x']			=		"255";
-	$cfg['img_y']			=		"255";
 	
 	$cfg['pmax']			=		5; // max votes on a poll
 

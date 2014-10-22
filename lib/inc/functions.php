@@ -8,13 +8,11 @@
 		
 		$nav = '[
 			<a href="/home/">home</a> /
-			<a href="/news/">news</a> /
 			<a href="/rules/">rules</a> /
-			<a href="/faq/">faq</a> /
-			<a href="/polls/">polls</a><!-- /
+			<a href="/faq/">faq</a> <!-- /
 			<a href="http://archive.uboachan.net/">archive</a> /
-			<a href="http://archive.uboachan.net/media/src/Yume_Nikki.rar">v0.10 Download</a> /
-			<a href="http://widget.mibbit.com/?server=irc.datnode.net&channel=%23ka-ch" target="_blank">chat</a>-->
+			<a href="http://archive.uboachan.net/media/src/Yume_Nikki.rar">v0.10 Download</a> --> /
+			<a href="https://kiwiirc.com/client/irc.irchighway.net/?theme=cli#uboachan" target="_blank">chat</a>
 		] &nbsp;&nbsp;&nbsp;';
 		
 		$query = "SELECT * FROM ".$cfg['prefix']."_cats ORDER BY cat_order ASC";
@@ -32,14 +30,18 @@
 			
 				$nav .= "[ ";
 				foreach ($cat_boards as $b) {
-					$bquery = "SELECT * FROM ".$cfg['prefix']."_boards WHERE board_retired='0' AND board_id='$b' LIMIT 1";
+					$bquery = "SELECT * FROM ".$cfg['prefix']."_boards WHERE board_id='$b' LIMIT 1";
 					$bresult = mysql_query($bquery) or die(mysql_error());
 				
 					while($row = mysql_fetch_array($bresult)) {
-						$i++;
-						$nav .= '<a href="'.$cfg['sitedir'].'/'.$row["board_addr"].'/" title="'.$row["board_name"].'">'.$row["board_addr"].'</a>';
-						if ($i < $limit) {
-							$nav .= ' / ';
+						if ($row['board_retired'] == 1) {
+							$limit--;
+						} else {
+							$i++;
+							$nav .= '<a href="'.$cfg['sitedir'].'/'.$row["board_addr"].'/" title="'.$row["board_name"].'">'.$row["board_addr"].'</a>';
+							if ($i < $limit) {
+								$nav .= ' / ';
+							}
 						}
 					}
 				}
@@ -86,7 +88,7 @@
 	function upload($mode) {
 		
 		global $spoiler;
-		$extensions = array("gif", "png", "jpg", "jpeg", "bmp");
+		$extensions = array("gif", "png", "jpg", "jpeg", "bmp", "webm");
 		$uploadDir = 'src/';
 		$url = $_POST['url'];
 		
@@ -203,9 +205,9 @@
 		}
 
 		if ($vid == false) {
-			$content = preg_replace('#(?<!src=")(((f|ht){1}tps://)[-a-zA-Z0-9@:%_\+.~\#?&//=]+)#','<a href="\\1" target="_blank">\\1</a>', $content);
+			$content = preg_replace('#(?<!src=")(((f|ht){1}tp://)[-a-zA-Z0-9@:%_\+.~\#?&//=]+)#','<a href="\\1" target="_blank">\\1</a>', $content);
 		} else {
-			$search     = '/https\:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9-_]+)/smi';
+			$search     = '/http\:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9-_]+)/smi';
 			$replace    = '<br><iframe width="420" height="315" style="margin: 0 auto; margin-bottom: 8px;" src="//www.youtube.com/embed/$1?wmode=opaque" frameborder="0" allowfullscreen></iframe> <br>';
 			$replace    =	'<br>
 							<object width="420" height="315">
@@ -217,7 +219,7 @@
 							</object>
 							<br>';
 			$content 	= preg_replace($search,$replace,$content, 1);
-			$content = preg_replace('#(?<!src=")(((f|ht){1}tps://)[-a-zA-Z0-9@:%_\+.~\#?&//=]+)#','<a href="\\1" target="_blank">\\1</a>', $content);
+			$content = preg_replace('#(?<!src=")(((f|ht){1}tp://)[-a-zA-Z0-9@:%_\+.~\#?&//=]+)#','<a href="\\1" target="_blank">\\1</a>', $content);
 		}
 		
 		$content = preg_replace("/\bKappa\b/i","<img src='http://i.imgur.com/J5VWm6C.png'>",$content);
@@ -308,13 +310,49 @@
 			}
 		}
 		
+		$filetype = explode (".", $postdata['post_image']);
+		$filetype = explode('"', $filetype[1]);
+		$filetype = $filetype[0];
+		
 		if ($postdata['post_image'] != '') {
-			$postdata['post_image'] = '
-			<div class="postimage">
-				<a href="'.$cfg['sitedir'].'/src/'.$postdata["post_image"].'" target="_blank">
-					<img src="'.$cfg['sitedir'].'/src/'.$postdata["post_image"].'" style="max-width: '.$cfg['img_x'].'px; max-height: '.$cfg['img_y'].'px; width: auto; height: auto;">
-				</a>
-			</div>';
+			if ($filetype != "webm") {
+				if ($postdata['post_spoiler']) {
+					$postdata['post_image'] = '
+					<div class="postimage">
+						<a href="javascript:void:(0);">
+							<img src="/src/'.$postdata["post_image"].'" id="img_'.$postdata['post_id'].'" class="spoiler">
+						</a>
+					</div>';
+					$postdata['post_image'] .= '
+						<script type="text/javascript">
+							$("#img_'.$postdata['post_id'].'").click(function() {
+								$( this ).toggleClass("spoiler");
+							});
+						</script>
+					';
+				} else {
+					$postdata['post_image'] = '
+					<div class="postimage">
+						<a href="javascript:void:(0);">
+							<img src="/src/'.$postdata["post_image"].'" id="img_'.$postdata['post_id'].'" class="preview">
+						</a>
+					</div>';
+				}
+				$postdata['post_image'] .= '
+					<script type="text/javascript">
+						$("#img_'.$postdata['post_id'].'").click(function() {
+							$( this ).toggleClass("preview");
+						});
+					</script>
+				';
+			} else {
+				$postdata['post_image'] = '
+				<div class="postimage">
+					<video id="sampleMovie" preload controls style="max-width: 480px; max-height: 270px;">
+						<source src="/src/'.$postdata['post_image'].'" />
+					</video>
+				</div>';
+			}
 		}
 		
 		return $postdata;

@@ -21,7 +21,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	color: #656570;
 }
 .title img {
-	border: 1px solid #C5C5D0; 
+	border: 1px solid #C5C5D0;
+	-moz-box-shadow: 1px 1px 2px #C5C5D0;
+	-webkit-box-shadow: 1px 1px 2px #C5C5D0;
 	box-shadow: 1px 1px 2px #C5C5D0;
 }
 .polls  {
@@ -33,24 +35,24 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .threadcontainer {
 	border-top: 1px solid #C5C5D0;
 }
-.postinfol a, .postinfor a {
-	color: #000;
-}
-.postinfol a:hover, .postinfor a:hover {
-	color: #30307b;
-}
 .postbody {
 	background: #FFF;
+	-moz-box-shadow: 0px 0px 2px #AAA;
+	-webkit-box-shadow: 0px 0px 2px #AAA;
 	box-shadow: 0px 0px 2px #AAA;
 }
 .postimage {
 	overflow: visible;
 }
 .postimage img {
+	-moz-box-shadow: 1px 1px 2px #AAA;
+	-webkit-box-shadow: 1px 1px 2px #AAA;
 	box-shadow: 1px 1px 2px #AAA;
 }
 .frontpage {
 	background: #fff;
 	border: 1px solid #C5C5D0;
+	-moz-box-shadow: 1px 1px 2px #AAA;
+	-webkit-box-shadow: 1px 1px 2px #AAA;
 	box-shadow: 1px 1px 2px #AAA;
 }

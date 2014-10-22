@@ -1,3 +1,5 @@
+<img src="/lib/media/shitposting.gif" style="width: 100%; height: 100%">
+
 <?php
 	if ($_POST) {
 	
@@ -136,7 +138,7 @@
 						error("No message sent");
 					} else {
 						$extension = pathinfo($url, PATHINFO_EXTENSION);
-						$extensions = array("gif", "png", "jpg", "jpeg", "bmp");
+						$extensions = array("gif", "png", "jpg", "jpeg", "bmp", "webm");
 						if (!in_array($extension, $extensions)) {
 							error("Extension error");
 						}

@@ -32,12 +32,6 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .threadcontainer {
 	border-top: 1px solid #CFB9BA;
 }
-.postinfol a, .postinfor a {
-	color: #000;
-}
-.postinfol a:hover, .postinfor a:hover {
-	color: #065F07;
-}
 .postbody {
 	background: #F5FCE4;
 	box-shadow: 0px 0px 2px #CFB9BA;

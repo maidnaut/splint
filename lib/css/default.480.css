@@ -77,10 +77,9 @@ input[disabled], textarea[disabled] {
 	cursor: auto;
 }
 .reply {
-	margin-left:auto;
+	margin-left: -20px;
 	margin-right:auto;
 	min-width: 100px;
-	max-width:500px;
 	width: auto;
 	margin-bottom: 8px;
 }
@@ -97,12 +96,11 @@ input[disabled], textarea[disabled] {
 	margin-bottom: -16px;
 }
 .title {
-	margin-top: 32px;
-	padding-left: 16px;
-	margin-left:auto;
-	margin-right:auto;
+	margin-top: 48px;
 	width:auto;
 	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: -20px;
 }
 .title h1 {
@@ -110,6 +108,8 @@ input[disabled], textarea[disabled] {
 }
 .title img {
 	border-radius: 4px;
+	width: auto;
+	height: auto;
 }
 .polls  {
 	padding: 4px;
@@ -119,46 +119,49 @@ input[disabled], textarea[disabled] {
 	font-weight: bold;
 }
 .nav {
-	padding: 5px;
-	padding-left: 12px;
-	padding-right: 12px;
-	padding-bottom: 6px;
+	margin-bottom: 12px;
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	height: 16px;
-	width: calc(100% - 24px);
+	height: 32px;
+	width: 100%;
 	z-index: 9001;
 	opacity:0.9;
 }
+.nav-text {
+	font-size: 11pt;
+	position: relative;
+	top: 6px;
+	left: 12px;
+}
 .favicon {
-	width: 32px;
+	width: 46px;
 	height: auto;
 	float: left;
 	position: fixed;
-	top: -4px;
+	top: -2px;
 	left: 24px;
 }
 .nav-icon {
 	float: right;
 	position: fixed;
-	top: 4px;
+	top: 12px;
 	right: 12px;
 }
 .wrapper {
-	padding: 8px;
+	width: 448px;
 }
 
 .threadcontainer {
-	padding: 8px;
 	padding-top: 16px;
+	width: 100%;
 	margin-top: 3px;
 }
 .postcontainer {
 	display: inline-block;
 	margin-bottom: 16px;
 	vertical-align: top;
-	max-width: calc(100% - 32px);
+	max-width: 448px;
 	word-wrap: break-word;
 }
 .posttitle {
@@ -169,17 +172,20 @@ input[disabled], textarea[disabled] {
 .postinfol {
     padding: 5px;
 	padding-left: 0px;
+	max-width: 80%;
+	width: auto;
 	white-space:nowrap;
+	margin-right: 140px;
+	min-width: 100px;
 }
 .postinfor {
 	float: right;
+	width: 100px;
 	margin-top: -24px;
     padding: 5px;
-	margin-right: -3px;
+	margin-right: -10px;
 	opacity:0.8;
 	text-align: right;
-	margin-bottom: -100px;s
-	display: inline-block;
 }
 .postinfol a, .postinfor a {
 	color: initial;
@@ -187,47 +193,35 @@ input[disabled], textarea[disabled] {
 .postbody {
     padding-left: 16px;
 	padding-top: 4px;
-	padding-right: 14px;
-	padding-bottom: 14px;
+	padding-right: 20px;
+	padding-bottom: 10px;
 	margin-right: 2px;
 	margin-bottom: -8px;
 	overflow: auto;
-	min-width: 360px;
-	width: auto;
-}
-.postcontent {
-	display: block;
-	word-wrap: break-word;
-	width: 100% !important;
 }
 .postop {
 	box-shadow: none !important;
 }
 .postimage {
-	float: left;
 	width: auto;
 	height: auto;
 	margin-right: 16px;
+	margin-bottom: 8px;
 	padding-bottom: 3px;
 	z-index: 9001;
 	overflow: hidden;
 }
+.preview {
+	max-width: 255px;
+	max-height: 255px;
+}
 .postimage img {
-	max-width: 100%;
-	max-height: 100%;
+	max-width: 150px;
+	max-height: 150px;
 	width: auto;
 	height: auto;
 	image-rendering: auto;
 	margin-bottom: -5px;
-}
-.preview {
-	max-width: 255px !important;
-	max-height: 255px !important;
-}
-.spoiler {
-	content:url("/lib/media/ico/spoilers.png");
-	max-width: 150px !important;
-	max-height: 150px !important;
 }
 .postoptions {
 	float: right;
@@ -247,36 +241,20 @@ input[disabled], textarea[disabled] {
 	top: -2px;
 }
 .frontpage {
-	width:800px;
-	margin-left:auto;
-	margin-right:auto;
+	width: auto;
 	padding-top: 4px;
-	padding-left: 16px;
-	padding-right: 16px;
 	padding-bottom: 8px;
 	border-radius: 4px; 
 }
 .frontpage-news {
-	width:800px;
-	margin-left:auto;
-	margin-right:auto;
+	width: auto;
+	position: relative;
+	left: 9px;
 	padding-top: 4px;
 	padding-bottom: 8px;
 	border-radius: 4px; 
 }
 
-.recent_images {
-	width: 50%;
-	float: left;
-}
-.recent_posts {
-	width: 50%;
-	float: right;
-}
-
-.clearfix:after { 
-   content: " ";
-   display: block; 
-   height: 0; 
-   clear: both;
+.recent {
+	display: none;
 }
