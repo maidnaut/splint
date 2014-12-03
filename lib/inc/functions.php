@@ -66,6 +66,13 @@
 	
 	################################################################################################
 	
+	// Alert
+	function alert($exception) {
+		echo "<script>alert(\"".$exception."\");</script>";
+	}
+	
+	################################################################################################
+	
 	// Redirect
 	function redirect($url) {
 		echo "<script>window.location.replace('".$url."');</script>";
@@ -287,13 +294,13 @@
 				if ($postdata['post_email'] != null) {
 					$postdata['post_author'] = "<a href='mailto:".$postdata['post_email']."' style='text-decoration: underline !important;'><span style='font-weight: bold; color: ".$cfg['anon']." !important;'>".$postdata['post_author']."</span><span style='font-weight: none; color: ".$cfg['staff']." !important'> ## Admin</span></a>";
 				} else {
-					$postdata['post_author'] = "<span style='font-weight: bold; color: ".$cfg['anon']."'>".$postdata['post_author']."</span><span style='font-weight: none; color: ".$cfg['staff']." !important'> ## Admin</span>";
+					$postdata['post_author'] = "<span style='font-weight: bold; color: ".$cfg['anon']."'>".$postdata['post_author']."</span><span style='font-weight: none; color: ".$cfg['admin']." !important'> ## Admin</span>";
 				}
 			} else if ($postdata['post_trip'] == "Moderator") {
 				if ($postdata['post_email'] != null) {
 					$postdata['post_author'] = "<a href='mailto:".$postdata['post_email']."' style='text-decoration: underline !important;'><span style='font-weight: bold; color: ".$cfg['anon']." !important;'>".$postdata['post_author']."</span><span style='font-weight: none; color: ".$cfg['staff']." !important'> ## Mod</span></a>";
 				} else {
-					$postdata['post_author'] = "<span style='font-weight: bold; color: ".$cfg['anon']."'>".$postdata['post_author']."</span><span style='font-weight: none; color: ".$cfg['staff']." !important'> ## Mod</span>";
+					$postdata['post_author'] = "<span style='font-weight: bold; color: ".$cfg['anon']."'>".$postdata['post_author']."</span><span style='font-weight: none; color: ".$cfg['mod']." !important'> ## Mod</span>";
 				}
 			} else {
 				if ($postdata['post_email'] != null) {

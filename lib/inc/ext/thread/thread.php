@@ -71,7 +71,7 @@
 				$.get("/lib/inc/update.php", { last_id: last_id, addr:"'.$addr.'", thread:"'.$postdata['post_thread'].'" }, function(data){
 					$("#update").append(data);
 				});
-			}, 10000);
+			}, 1000);
 		</script>
 	';
 	

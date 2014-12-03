@@ -50,7 +50,7 @@
 			
 			// Check to see if we're banned
 			$banned = false;
-			$query = "SELECT * FROM bbs_bans";
+			$query = "SELECT * FROM ".$cfg['prefix']."_bans";
 			$result = mysql_query($query) or die(mysql_error());
 			while($bans = mysql_fetch_array($result)) {
 				if ($cfg['user_ip'] == $bans['bans_ip']) {
