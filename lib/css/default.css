@@ -119,17 +119,19 @@ input[disabled], textarea[disabled] {
 	font-weight: bold;
 }
 .nav {
-	padding: 5px;
 	padding-left: 12px;
 	padding-right: 12px;
-	padding-bottom: 6px;
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	height: 16px;
+	height: 24px;
 	width: calc(100% - 24px);
 	z-index: 9001;
 	opacity:0.9;
+}
+.nav-text {
+	position: relative;
+	top: 4px;
 }
 .favicon {
 	width: 32px;
@@ -165,24 +167,26 @@ input[disabled], textarea[disabled] {
 	font-weight: bold;
 	color: rgb(204, 17, 5);
 	font-size: 9pt;
+	margin-right: 90px;
 }
 .postinfol {
     padding: 5px;
 	padding-left: 0px;
 	white-space:nowrap;
+	word-break: break-all;
 }
 .postinfor {
 	float: right;
 	margin-top: -24px;
     padding: 5px;
 	margin-right: -3px;
-	opacity:0.8;
+	opacity:0.6;
 	text-align: right;
-	margin-bottom: -100px;s
-	display: inline-block;
+	margin-bottom: -100px;
+	display: block;
 }
 .postinfol a, .postinfor a {
-	color: initial;
+	color: inherit;
 }
 .postbody {
     padding-left: 16px;
@@ -194,6 +198,8 @@ input[disabled], textarea[disabled] {
 	overflow: auto;
 	min-width: 360px;
 	width: auto;
+	word-break:normal;
+	word-wrap:normal;
 }
 .postcontent {
 	display: block;
@@ -221,25 +227,24 @@ input[disabled], textarea[disabled] {
 	margin-bottom: -5px;
 }
 .preview {
-	max-width: 255px !important;
-	max-height: 255px !important;
+	max-width: 155px !important;
+	max-height: 155px !important;
 }
 .spoiler {
-	content:url("/lib/media/ico/spoilers.png");
+	content: url("/lib/media/ico/spoilers.png");
 	max-width: 150px !important;
 	max-height: 150px !important;
 }
 .postoptions {
-	float: right;
-	position: relative;
+	position: absolute;
 	top: 4px;
-	right: 24px;
-	margin-right: -40px;
 	margin-bottom: -8px;
-	display: inline-block;
+	margin-right: -28px;
 	font-size: 10pt;
 	font-weight: bold;
 	text-align: center;
+	float: right;
+	width: 16px;
 }
 .pagination {
 	padding: 12px;

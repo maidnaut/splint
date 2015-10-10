@@ -43,7 +43,16 @@
 			$postdata = array_reverse($postdata);
 			
 			foreach($postdata as $postdata) {
+					
 				$postdata = postdata($postdata);
+				$hidden = false;
+					
+				if (($postdata['post_reports'] == $cfg['rcap']) && ($postdata['post_isexempt'] == 0) && (!$auth)) {
+					$postdata['post_image'] = '';
+					$postdata['post_content'] = "<span style='opacity:0.6; font-style: italic;'>Post hidden</span>";
+					$hidden = true;
+				}
+				
 				$last_id = $postdata['post_uid'];
 				include("lib/inc/ext/globals/view_post.tpl");
 			}

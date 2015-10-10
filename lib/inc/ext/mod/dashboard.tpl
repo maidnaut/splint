@@ -7,7 +7,7 @@
 ?>
 
 <!-- Global Settings -->
-<form action="/post.php" method="post">
+<form action="/mod.php" method="post">
 <div class="postbody" style="margin-left: 80px; padding-top: 12px;">
 	<div style="float: left; width: 25%; height: 26px; position: relative; top: 5px;">
 		<b>Dashboard</b>
@@ -58,7 +58,7 @@
 		>?</a>
 	</div>
 	<div style="float: right; width: 75%;">
-		<input type="text" value="<?=$conf['conf_admincolor']?>">
+		<input type="text" value="<?=$conf['conf_admincolor']?>" name="a_cap">
 	</div>
 	<div class="spacer" style="clear: both;"></div>
 	<div style="float: left; width: 25%; height: 26px; position: relative; top: 6px;">
@@ -68,7 +68,7 @@
 		>?</a>
 	</div>
 	<div style="float: right; width: 75%;">
-		<input type="text" value="<?=$conf['conf_modcolor']?>">
+		<input type="text" value="<?=$conf['conf_modcolor']?>" name="m_cap">
 	</div>
 	<div class="spacer" style="clear: both;"></div>
 	<div style="float: left; width: 25%; height: 26px; position: relative; top: 6px;">
@@ -78,7 +78,7 @@
 		>?</a>
 	</div>
 	<div style="float: right; width: 75%;">
-		<input type="text" value="<?=$conf['conf_anoncolor']?>">
+		<input type="text" value="<?=$conf['conf_anoncolor']?>" name="a_color">
 	</div>
 	
 	<div class="spacer" style="clear: both;"><br></div>
@@ -90,7 +90,7 @@
 		>?</a>
 	</div>
 	<div style="float: right; width: 75%;">
-		<input type="text" value="<?=$conf['conf_reportcap']?>">
+		<input type="text" value="<?=$conf['conf_reportcap']?>" name="rcap">
 	</div>
 	<div class="spacer" style="clear: both;"></div>
 	<div style="float: left; width: 25%; height: 26px; position: relative; top: 6px;">
@@ -100,7 +100,7 @@
 		>?</a>
 	</div>
 	<div style="float: right; width: 75%;">
-		<input type="text" value="<?=$conf['conf_bumplimit']?>">
+		<input type="text" value="<?=$conf['conf_bumplimit']?>" name="blimit">
 	</div>
 	<div class="spacer" style="clear: both;"></div>
 	<div style="float: left; width: 25%; height: 26px; position: relative; top: 6px;">
@@ -110,17 +110,17 @@
 		>?</a>
 	</div>
 	<div style="float: right; width: 75%;">
-		<input type="text" value="<?=$conf['conf_threadlimit']?>">
+		<input type="text" value="<?=$conf['conf_threadlimit']?>" name="tlimit">
 	</div>
 	
 	<div class="spacer" style="clear: both;"><br></div>
 	
 	Rules <br><br>
-	<textarea style="width: 100%; height: 250px;"><?=$conf['conf_rules']?></textarea>
+	<textarea style="width: 100%; height: 250px;" name="rules"><?=$conf['conf_rules']?></textarea>
 	<br><br><br>
 		
 	FAQ <br><br>
-	<textarea style="width: 100%; height: 250px;"><?=parseText($conf['conf_faq'])?></textarea>
+	<textarea style="width: 100%; height: 250px;" name="faq"><?=parseText($conf['conf_faq'])?></textarea>
 	<br><br><br>
 	
 	<div style="float: left; width: 25%; height: 26px; position: relative; top: 5px;">

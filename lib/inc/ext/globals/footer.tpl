@@ -1,4 +1,8 @@
-			<div class="threadcontainer" style="text-align: left;">
+			<div class="threadcontainer" style="text-align: left; padding-left: 24px;">
+				<a href="/home/">
+					(͡° ͜ʖ ͡°)
+				</a>
+				&nbsp;&nbsp;&nbsp;
 				<?=nav()?>
 				<div style="float: right;">
 					<a href="javascript:window.scrollTo(0,top);">Back to top</a>
@@ -10,5 +14,6 @@
 				<a href="https://github.com/maidnaut/splint" target="_blank"><img src="/lib/media/ico/github.png" style="width: 50px; height: 50px; position: relative; top: 5px;"></a>
 			</div>
 		</div>
+		
 	</body>
 </html>

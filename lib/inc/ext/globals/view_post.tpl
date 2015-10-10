@@ -1,5 +1,6 @@
 <div id="<?=$postdata['post_uid']?>" style="float: left; position: relative; margin: -32px;">&nbsp;</div>
-<div class="postcontainer">
+<div class="postcontainer" <?php if ($hidden == true) { echo "style='opacity:0.5;'"; } ?>>
+	<?php include("lib/inc/ext/globals/post_options.tpl"); ?>
 	<div class="postbody">
 		<div style="text-align: top;">
 			<div class="postinfol">
@@ -19,6 +20,6 @@
 			<div style="display: inline-block; float: left;"><?=$postdata['post_image']?></div>
 			<?=parseText($postdata['post_content'])?>
 		</div>
-	</div>	
+	</div>
 </div>
 <br>

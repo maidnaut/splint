@@ -6,15 +6,6 @@
 	function nav() {
 		global $cfg;
 		
-		$nav = '[
-			<a href="/home/">home</a> /
-			<a href="/rules/">rules</a> /
-			<a href="/faq/">faq</a> <!-- /
-			<a href="http://archive.uboachan.net/">archive</a> /
-			<a href="http://archive.uboachan.net/media/src/Yume_Nikki.rar">v0.10 Download</a> --> /
-			<a href="https://kiwiirc.com/client/irc.irchighway.net/?theme=cli#uboachan" target="_blank">chat</a>
-		] &nbsp;&nbsp;&nbsp;';
-		
 		$query = "SELECT * FROM ".$cfg['prefix']."_cats ORDER BY cat_order ASC";
 		$result = mysql_query($query) or die(mysql_error());
 		
@@ -28,7 +19,6 @@
 			
 			if ($limit != 0) {
 			
-				$nav .= "[ ";
 				foreach ($cat_boards as $b) {
 					$bquery = "SELECT * FROM ".$cfg['prefix']."_boards WHERE board_id='$b' LIMIT 1";
 					$bresult = mysql_query($bquery) or die(mysql_error());
@@ -38,14 +28,26 @@
 							$limit--;
 						} else {
 							$i++;
-							$nav .= '<a href="'.$cfg['sitedir'].'/'.$row["board_addr"].'/" title="'.$row["board_name"].'">'.$row["board_addr"].'</a>';
-							if ($i < $limit) {
-								$nav .= ' / ';
+							
+							$url = explode("/", $_SERVER['REQUEST_URI']);
+							
+							if ($row['board_addr'] == $url[1]) {
+								
+								$nav .= '<a href="'.$cfg['sitedir'].'/'.$row["board_addr"].'/" title="'.$row["board_name"].'" class="nav-border">'.$row['board_name'].'</a> &nbsp;';
+								
+							} else {
+								
+								$nav .= '<a href="'.$cfg['sitedir'].'/'.$row["board_addr"].'/" title="'.$row["board_name"].'">'.$row['board_addr'].'</a> &nbsp;';
+								
 							}
+							
+							$nav .= '<a href="'.$cfg['sitedir'].'/'.$row["board_addr"].'/" title="'.$row["board_name"].'">'.$board.'</a>';
+							
 						}
 					}
 				}
-				$nav .= " ] ";
+				// Space inbetween cats
+				$nav .= " &nbsp; ";
 			}
 		}
 		
@@ -112,12 +114,15 @@
 				if (in_array($extension, $extensions)) {
 					if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadDir.$filename)) {
 						return $filename;
+						die();
 					} else {
-						error("There was an error uploading your file.");
+						$error = true;
+						return error("There was an error uploading your file, post discarded.");
 						die();
 					}
 				} else {
-					error("Extension error.");
+					$error = true;
+					return error("There was an error uploading your file, post discarded.");
 					die();
 				}
 			} else {
@@ -127,7 +132,7 @@
 		} else {
 			
 			if (!$file = fopen($url,"rb")) {
-				error("There was an error uploading your file.");
+				return error("There was an error uploading your file, post discarded.");
 				die();
 			} else {
 				
@@ -232,6 +237,7 @@
 		$content = preg_replace("/\bKappa\b/i","<img src='http://i.imgur.com/J5VWm6C.png'>",$content);
 		
 		ob_end_flush();
+	
 		return $content;
 		
 	}
@@ -317,6 +323,8 @@
 			}
 		}
 		
+		$img = $postdata['post_image'];
+		
 		$filetype = explode (".", $postdata['post_image']);
 		$filetype = explode('"', $filetype[1]);
 		$filetype = $filetype[0];
@@ -344,14 +352,27 @@
 							<img src="/src/'.$postdata["post_image"].'" id="img_'.$postdata['post_id'].'" class="preview">
 						</a>
 					</div>';
+					$postdata['post_image'] .= '
+						<script type="text/javascript">
+							$("#img_'.$postdata['post_id'].'").click(function() {
+								$( this ).toggleClass("preview");
+							});
+						</script>
+					';
 				}
-				$postdata['post_image'] .= '
-					<script type="text/javascript">
-						$("#img_'.$postdata['post_id'].'").click(function() {
-							$( this ).toggleClass("preview");
-						});
-					</script>
-				';
+				
+				// nobody pls fix this
+#				echo "
+#					<script>
+#						$('#postimage').live('click', function(e) { 
+#					   		if( e.which == 1 ) {
+#					      		e.preventDefault();
+#					      		window.open('/src/".$img."','_blank');
+#					   		}
+#						});
+#					</script>
+#				";
+
 			} else {
 				$postdata['post_image'] = '
 				<div class="postimage">

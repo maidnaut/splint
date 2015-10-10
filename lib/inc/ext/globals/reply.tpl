@@ -21,7 +21,7 @@
 						<b>Name</b>
 					</td>
 					<td class="row2">
-						<input type="text" style="width: 300px" name="name" value="<?=$_COOKIE['splint_remember-me']?>" placeholder="Name"<?php if (($mode != "board") && ($threaddata['threads_locked'] == 1)) { echo " disabled"; } ?>> <br><br>
+						<input type="text" style="width: 300px" name="name" value="<?=$_COOKIE['splint_remember-me']?>" maxlength="50" placeholder="Name"<?php if (($mode != "board") && ($threaddata['threads_locked'] == 1)) { echo " disabled"; } ?>> <br><br>
 					</td>
 				</tr>
 				<tr> 
@@ -29,7 +29,7 @@
 						<b>Email</b>
 					</td>
 					<td class="row2">
-						<input type="text" style="width: 300px" name="email" placeholder="Email"<?php if (($mode != "board") && ($threaddata['threads_locked'] == 1)) { echo " disabled"; } ?>> <br><br>
+						<input type="text" style="width: 300px" name="email" maxlength="50" placeholder="Email"<?php if (($mode != "board") && ($threaddata['threads_locked'] == 1)) { echo " disabled"; } ?>> <br><br>
 					</td>
 				</tr>
 				<tr> 
@@ -37,7 +37,7 @@
 						<b>Subject</b>
 					</td>
 					<td class="row2">
-						<input type="text" style="width: 300px" name="subject" placeholder="Subject"<?php if (($mode != "board") && ($threaddata['threads_locked'] == 1)) { echo " disabled"; } ?>> <br><br>
+						<input type="text" style="width: 300px" name="subject" maxlength="50" placeholder="Subject"<?php if (($mode != "board") && ($threaddata['threads_locked'] == 1)) { echo " disabled"; } ?>> <br><br>
 					</td>
 				</tr>
 				<tr> 
@@ -45,7 +45,7 @@
 						<b>Comment</b>
 					</td>
 					<td class="row2">
-						<textarea style="width: 300px" name="text" id="text" placeholder="Comment"<?php if (($mode != "board") && ($threaddata['threads_locked'] == 1)) { echo " disabled"; } ?>><?=$backup?></textarea> <br><br>
+						<textarea style="width: 300px" name="text" id="text" maxlength="5000" placeholder="Comment"<?php if (($mode != "board") && ($threaddata['threads_locked'] == 1)) { echo " disabled"; } ?>><?=$backup?></textarea> <br><br>
 					</td>
 				</tr>
 				<tr> 

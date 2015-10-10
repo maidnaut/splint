@@ -9,30 +9,73 @@
 		<link rel="stylesheet" type="text/css" href="/lib/css/default.css" media="screen and (min-width:480px)">
 		<link rel="stylesheet" type="text/css" href="/lib/css/default.480.css" media="only screen and (min-width: 320px) and (max-width:480px)">
 		<link rel="stylesheet" type="text/css" href="/lib/css/default.320.css" media="only screen and (max-width:320px)">
-		<link href="/lib/css/mio.css" title="mio" type="text/css" media="screen" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href="/lib/css/mio.css" title="mio" type="text/css" media="screen" rel="alternate stylesheet">
 		<link href="/lib/css/yuuko.css" title="yuuko" type="text/css" media="screen" rel="alternate stylesheet">
 		<link href="/lib/css/rollerskates.css" title="rollerskates" type="text/css" media="screen" rel="alternate stylesheet">
-		<link href="/lib/css/splint.css" title="splint" type="text/css" media="screen" rel="alternate stylesheet">
+		<link href="/lib/css/splint.css" title="splint" type="text/css" media="screen" rel="stylesheet">
 		<link href="/lib/css/ubuu.css" title="ubuu" type="text/css" media="screen" rel="alternate stylesheet">
-		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+
+		<script src="//code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+
+		<script src="//code.jquery.com/ui/1.9.2/jquery-ui.js" type="text/javascript"></script>
+
+		<link href="//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" type="text/css" rel="stylesheet"></link>
+
 		<script type="text/javascript" src="/lib/js/stylesheet.js"></script>
+		<script type="text/javascript" src="/lib/js/sortable.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				$( document ).tooltip();
 			});
 		</script>
+		
 	</head>
 <body>
 	<div class="wrapper">
 		<div class="header">
 			<div class="nav" style="padding-left: 72px;">
-				<a href="/home/">
-					<img src="/lib/media/ico/douevenlift.png" class="favicon">
+				<a href="/home/" style="position: fixed; left: 24px; top: 4px;">
+				(͡° ͜ʖ ͡°)
+				&nbsp;&nbsp;&nbsp;
 				</a>
-				<div class="nav-text"><?=nav()?></div>
+				
+		
+				&nbsp;&nbsp;&nbsp;
+				
+				<span class="nav-text">
+					&nbsp; <a href="javascript:void(0);" class="toggle" title="Open Menu">+</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					<span class="hide" style="display: none;">
+						 [ &nbsp;
+							<a href="/home/">home</a> /
+							<a href="/rules/">rules</a> /
+							<a href="/faq/">faq</a> / <!--
+							<a href="http://archive.uboachan.net/">archive</a> /
+							<a href="http://archive.uboachan.net/media/src/Yume_Nikki.rar">v0.10 Download</a> / -->
+							<a href="https://kiwiirc.com/client/irc.irchighway.net/?theme=cli#uboachan" target="_blank">chat</a>
+						&nbsp; ] &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+					</span>
+		
+					<?=nav()?>
+					
+				</span>
+				
+				<script type="text/javascript">
+				$( ".toggle" ).click(function() {
+					
+					$(".hide").toggle(100);
+					($(".toggle").text() === "+") ? $(".toggle").text("-") : $(".toggle").text("+");
+					 
+				});
+				</script>
+				
+				
+					
+				
 				&nbsp;<?php /*if (($cfg['offline'] == 0) || ($auth)) {  }*/ ?>
-				<div class="nav-icon"><a href="/mod/"><img src="/lib/media/ico/admin.png" title="Staff Panel"></a></div>
+				<div class="nav-icon"><a href="/mod/"><i class="fa fa-cogs" title="Staff Panel"></i></div>
 			</div>
 			<div id="styles" style="z-index: 9002; float: right; position: fixed; top: 36px; right: 9px;">
 				<a onclick="setActiveStyleSheet('mio'); return false;" title="Mio" href="javascript:void(0);"><div style="
@@ -54,7 +97,7 @@
 					border-radius: 2px;">&nbsp;</div>
 				</a>
 				<a onclick="setActiveStyleSheet('splint'); return false;" title="Splint" href="javascript:void(0);"><div style="
-					width: 15px; height: 15px; background: #4da0bb; margin-bottom: 4px; margin-right: 4px;
+					width: 15px; height: 15px; background: #c06ddb; margin-bottom: 4px; margin-right: 4px;
 					box-shadow: 1px 1px 2px #000;
 					border-bottom: 1px solid #000;
 					border-radius: 2px;">&nbsp;</div>

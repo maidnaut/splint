@@ -1,26 +1,33 @@
 body {
-	background: #0d0d0d;
+	background: #191919;
 	color: #ccc;
 }
+.wrapper {
+	background: url('img/mascot.png') no-repeat;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 35%;
+    background-position: 100% 100%;
+}
 a, a:hover, a:active {
-	color: #4da0bb;
+	color: #c06ddb;
 	text-shadow: 1px 1px #000 !important;
 }
-input[type="text"], input[type="password"], textarea {
+input, input[type="text"], input[type="password"], textarea {
 	color: #C0D0E0;
-	background: #001825;
+	background: #100d1b;
 	border: 1px solid #000;
 }
 /* input glow */
 textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
 	outline: none;
-	background: #001825;
+	background: #100d1b;
 	border: 1px solid #000;
 	box-shadow:none !important;
 }
 .btn, .btn:hover {
 	color: #C0D0E0 !important;
-	background-color: #001825 !important;
+	background-color: #100d1b !important;
 	border: 1px solid #000 !important;
 	box-shadow: 1px 1px 2px #000;
 	text-shadow: none;
@@ -37,22 +44,35 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	background: rgba(46,46,46,0.7);
 }
 .nav {
-	background-color: #1b1b1b;
-	background-image: -moz-linear-gradient(top, #222222, #111111);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
-	background-image: -webkit-linear-gradient(top, #222222, #111111);
-	background-image: -o-linear-gradient(top, #222222, #111111);
-	background-image: linear-gradient(to bottom, #222222, #111111);
-	background-repeat: repeat-x;
-	border-color: #252525;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+	background: rgba(51,51,51,1);
+	background: -moz-linear-gradient(top, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 16%, rgba(26,26,26,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(51,51,51,1)), color-stop(16%, rgba(51,51,51,1)), color-stop(100%, rgba(26,26,26,1)));
+	background: -webkit-linear-gradient(top, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 16%, rgba(26,26,26,1) 100%);
+	background: -o-linear-gradient(top, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 16%, rgba(26,26,26,1) 100%);
+	background: -ms-linear-gradient(top, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 16%, rgba(26,26,26,1) 100%);
+	background: linear-gradient(to bottom, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 16%, rgba(26,26,26,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#1a1a1a', GradientType=0 );
+
+-webkit-box-shadow: 0px 4px 22px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 4px 22px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 4px 22px 0px rgba(0,0,0,0.5);
+}
+.nav-border, .nav-border:hover {
+	color: inherit;
+    line-height: 1em;
+    display: inline-block;
+    text-decoration: none;
+	border-bottom: 1px solid #c06ddb;
+    height: 16px;
+    padding: 0;
 }
 .threadcontainer {
 	border-top: 1px solid #000;
 }
 .postbody {
-	background: #111;
-	box-shadow: 0px 0px 2px #000;
+	background: #080008;
+	border: 1px solid #000;
+	word-break: break-word;
 }
 .postimage {
 	overflow: visible;
@@ -63,4 +83,15 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .frontpage {
 	background: #111;
 	box-shadow: 1px 1px 2px #000;
+}
+
+
+.ui-tooltip, .arrow:after {
+	background: #191919 !important;
+	color: #ccc !important;
+    border: 1px solid #000 !important;
+	border-bottom: 1px solid #c06ddb !important;
+	box-shadow: none !important;
+	border-radius: none !important;
+	opacity: 0.8;
 }

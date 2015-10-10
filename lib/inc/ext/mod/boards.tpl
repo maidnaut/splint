@@ -37,29 +37,70 @@
 	
 	<div class="spacer" style="clear: both;"><br></div>
 	
-	<div style="float: left; width: 25%; height: 26px; position: relative; top: 5px;">
-		^v &nbsp;&nbsp;&nbsp; <b>Splint</b>
-	</div>
+	 <script>
+		$(function() {
+			$( "#sortable" ).sortable({ handle: ".handle" });
+		});
+	</script>
 	
-	<div style="float: right; width: 75%;">
-		^v &nbsp;&nbsp;&nbsp;
-		/a/ &nbsp;&nbsp;&nbsp;
-		<input type="text" value="Animal Crackers"> &nbsp;&nbsp;&nbsp;
-		[<a>Delete</a>/<a>Retire</a>] <br>
+	<hr><br>
+	
+	<form action="<?=$cfg['sitedir']?>/mod.php" method="post" enctype="multipart/form-data" id="boards">
+	
+		<div><b>Splint</b></div> <br>
 		
-		^v &nbsp;&nbsp;&nbsp;
-		/b/ &nbsp;&nbsp;&nbsp;
-		<input type="text" value="Banana">
-		&nbsp;&nbsp;&nbsp; [<a>Delete</a>/<a>Retire</a>] <br>
-	</div>
+		<div class="ui-splitselect ui-helper-clearfix ui-widget ui-widget-content">
+		    <div class="ui-widget-content list-available" style="width: 100%;">
+		        <ul id="sortable" class="list available" style=" ">
+		        	
+		            <li class="ui-state-default ui-state-focus" style="display: list-item; height: 32px; padding-left: 6px; padding-right: 8px;">
+		            	<div style="position: relative; top: 6px; width: 100%;">
+	    					<span class="handle ui-icon ui-icon-arrow-4" style="float: left; width: 16px; position: relative; top: 2px;"></span> &nbsp;
+		            		/s/ &nbsp;
+		            		
+		            		<input value="Splint" name="name[]"> &nbsp;
+		            		
+		            		<input value="" style="width: 364px;" name="subtitle[]">
+		            		
+		            		&nbsp;&nbsp;&nbsp;
+		            		
+		            		<a href="javascript:void(0);" title="Delete"class="ui-icon ui-icon-trash" style="float: right;"></a>
+		            		<a href="javascript:void(0);" title="Retire"class="ui-icon ui-icon-clock" style="float: right;"></a>
+		            		
+		            		
+		            	</div>
+		            </li>
+		        	
+		            <li class="ui-state-default ui-state-focus" style="display: list-item; height: 32px; padding-left: 6px; padding-right: 8px;">
+		            	<div style="position: relative; top: 6px; width: 100%;">
+	    					<span class="handle ui-icon ui-icon-arrow-4" style="float: left; width: 16px; position: relative; top: 2px;"></span> &nbsp;
+		            		/a/ &nbsp;
+		            		
+		            		<input value="The Alphabet" name="name[]"> &nbsp;
+		            		
+		            		<input value="abcdefghijklmnopqrstuvwxyz" style="width: 364px;" name="subtitle[]">
+		            		
+		            		&nbsp;&nbsp;&nbsp;
+		            		
+		            		<a href="javascript:void(0);" title="Delete"class="ui-icon ui-icon-trash" style="float: right;"></a>
+		            		<a href="javascript:void(0);" title="Retire"class="ui-icon ui-icon-clock" style="float: right;"></a>
+		            		
+		            		
+		            	</div>
+		            </li>
+		            
+		        </ul>
+		    </div>
+	    </div>
 	
-	<div class="spacer" style="clear: both;"><br></div>
-	
-	<div style="float: left; width: 25%; height: 26px; position: relative; top: 6px;">&nbsp;</div>
-	<div style="float: right; width: 75%;">
-		<input type='hidden' name='update'>
-		<button type='submit' class='btn btn-mini'>Update!</button> &nbsp;&nbsp;&nbsp;&nbsp;
-	</div>
+		<div class="spacer" style="clear: both;"><br></div>
+		
+		<div>
+		<input type='hidden' name='boards' value="boards">
+			<button type='submit' class='btn btn-mini' id="submit">Update!</button> &nbsp;&nbsp;&nbsp;&nbsp;
+		</div>
+	    
+	</form>
 	
 </div>
 <div class="spacer" style="clear: both;"></div>

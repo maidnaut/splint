@@ -7,36 +7,38 @@
 		setcookie("splint_auth", $username."-".$password, time()-(10*365*24*60*60), '/');
 		redirect("/mod/");
 	}
-	echo $auth;
+	
 	##############
 	
 	if ($auth == 0) {
-		include("/lib/inc/ext/mod/login.tpl");
+		include("lib/inc/ext/mod/login.tpl");
 	} else {
 	
 		echo '<div class="threadcontainer">
 			<div class="frontpage" style="padding-top: 12px; background: none; border: none; box-shadow: none;">';
 	
-		include ("/lib/inc/ext/mod/sidebar.tpl");
+		include ("lib/inc/ext/mod/sidebar.tpl");
 	
 		if ($addr == '') {
-			include("/lib/inc/ext/mod/dashboard.tpl");
+			include("lib/inc/ext/mod/dashboard.tpl");
 		} else if ($addr == 'boards') {
-			include("/lib/inc/ext/mod/boards.tpl");
+			include("lib/inc/ext/mod/boards.tpl");
 		} else if ($addr == 'news') {
-			include("/lib/inc/ext/mod/news.tpl");
+			include("lib/inc/ext/mod/news.tpl");
 		} else if ($addr == 'discussion') {
-			include("/lib/inc/ext/mod/discussion.tpl");
+			include("lib/inc/ext/mod/discussion.tpl");
 		} else if ($addr == 'reports') {
-			include("/lib/inc/ext/mod/reports.tpl");
+			include("lib/inc/ext/mod/reports.tpl");
 		} else if ($addr == 'bans') {
-			include("/lib/inc/ext/mod/bans.tpl");
+			include("lib/inc/ext/mod/bans.tpl");
 		} else if ($addr == 'modlog') {
-			include("/lib/inc/ext/mod/modlog.tpl");
+			include("lib/inc/ext/mod/modlog.tpl");
 		} else if ($addr == 'users') {
-			include("/lib/inc/ext/mod/users.tpl");
+			include("lib/inc/ext/mod/users.tpl");
 		} else if ($addr == 'banners') {
-			include("/lib/inc/ext/mod/banners.tpl");
+			include("lib/inc/ext/mod/banners.tpl");
+		} else if ($addr == 'search') {
+			include("lib/inc/ext/mod/search.tpl");
 		}
 		
 		echo '</div>

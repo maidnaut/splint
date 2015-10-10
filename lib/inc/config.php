@@ -6,8 +6,11 @@
 	// Database config
 	//////////////////////////////////////////////////////////////////////////////////////////
 	
-	$dbhost = 'localhost';
-	$dbuser = 'root';
+	// how 2 sql with 9c
+	// it's a mystery to everyone
+	
+	$dbhost = '0.0.0.0';
+	$dbuser = 'maidnaut';
 	$dbpass = '';
 	$dbname = 'splint';
 	$cfg['prefix'] = "bbs";
@@ -37,7 +40,14 @@
 	$cfg['anon'] 			=	 	$row['conf_anoncolor'];
 	$cfg['rcap'] 			=	 	$row['conf_reportcap'];
 	$cfg['threadlimit'] 	=	 	$row['conf_threadlimit'];
-	$cfg['user_ip']			=		$_SERVER['REMOTE_ADDR'];
+	
+	if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+		$cfg['user_ip'] 	= $_SERVER['HTTP_CLIENT_IP'];
+	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+	    $cfg['user_ip'] 	= $_SERVER['HTTP_X_FORWARDED_FOR'];
+	} else {
+	   $cfg['user_ip'] 		= $_SERVER['REMOTE_ADDR'];
+	}
 	
 	$cfg['salt'] 			= 		"splint";	// shit nigger what the fuck are you doing get this out of here
 	

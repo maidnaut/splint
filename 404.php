@@ -1,5 +1,7 @@
 <?php
-	
+
+	echo $IP;
+
 	// Include objects
 	include_once("lib/inc/config.php");
 	include_once("lib/inc/functions.php");

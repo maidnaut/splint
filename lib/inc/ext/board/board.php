@@ -35,9 +35,15 @@
 				$page = 1;
 			else if ($page > $last)
 				$page = $last;
-			$max = 'limit ' . ($page - 1) * $limit .','. $limit;
-			$total = $rows;
+				
+			if ($page == 0) {
+				$page = 1;
+			} else {
+				$max = 'limit ' . ($page - 1) * $limit .','. $limit;
+				$total = $rows;
+			}
 		}
+		
 		$m_query = mysql_query("SELECT * FROM ".$cfg['prefix']."_threads WHERE threads_board='$addr' ORDER BY threads_sticky DESC, threads_bump DESC $max") or die(mysql_error());
 	} else {
 		$m_query = mysql_query("SELECT * FROM ".$cfg['prefix']."_threads WHERE threads_board='$addr' ORDER BY threads_sticky DESC, threads_bump DESC");
@@ -81,10 +87,20 @@
 						$postdata[] = $row;
 					}
 					$postdata = array_reverse($postdata);
-					
+			
 					foreach($postdata as $postdata) {
+							
 						$postdata = postdata($postdata);
-						include("lib/inc/ext/globals/view_post.tpl");		
+						$hidden = false;
+							
+						if (($postdata['post_reports'] == $cfg['rcap']) && ($postdata['post_isexempt'] == 0) && (!$auth)) {
+							$postdata['post_image'] = '';
+							$postdata['post_content'] = "<span style='opacity:0.6; font-style: italic;'>Post hidden</span>";
+							$hidden = true;
+						}
+						
+						$last_id = $postdata['post_uid'];
+						include("lib/inc/ext/globals/view_post.tpl");
 					}
 					
 				echo "</div>";

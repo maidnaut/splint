@@ -11,7 +11,7 @@
 					<b>Recent Images</b> <br><br>
 					<?=recent_images()?>
 				</div>
-				<div class="recent_posts"> <!-- limit: 9 -->
+				<div class="recent_posts" style="word-break: break-word;"> <!-- limit: 9 -->
 					<b>Recent Posts</b> <br><br>
 					<div style="padding-left: 8px;"><?=recent_posts()?></div>
 				</div>

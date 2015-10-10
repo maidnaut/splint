@@ -1,0 +1,30 @@
+horizontal board lists on /home                                                 easy
+fix catalog, show webm's and spoilers                                           easy
+delete generals, that idea was stupid                                           easy
+move mod/anon colors into config, add my_capcode for admins                     easy
+discussions in mcp                                                              easy
+news posts (comments?)                                                          med (comments)
+news posts on /home                                                             easy
+board order with ajax save                                                      hard
+dynamic thread updates (not sure if they work?)                                 med
+does the ban list work?                                                         med
+idk if the mod log even works                                                   med
+nothing in the mcp works probably                                               WHY
+new staff list (organize by name, promote/demote/fire, admins protected)        easy
+make elevated owner level so admins cant fire owner                             easy
+banner uploader                                                                 easy
+nsfw flags on boards, red alt to stylesheet                                     med
+light/dark styles with red alts                                                 med
+delete post                                                                     med
+ban ip                                                                          med
+ip in posts                                                                     easy
+ip lookup with option to delete all posts by ip                                 med
+post hovers                                                                     hard (idk how to do this)
+post highlight                                                                  hard (ditto)
+finish new layout                                                               easy
+swap in the new layout                                                          med
+mobile layout                                                                   med
+infinite scroll                                                                 hard (every time i've tried to do this i couldn't get it working)
+floating post box                                                               med
+ajax posts/auto update on post                                                  med
+post editing                                                                    med
